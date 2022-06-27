@@ -16,34 +16,37 @@ public class Medico extends Persona{
     
     private String especialidad;
     private Float sueldo;
+    private Integer numConsultorio;
     
     private Hospital hospital;
     private List<Paciente> pacienteList;
 
     //Constructores
-    public Medico() {
-        pacienteList = new LinkedList<Paciente>();
-    }
-
-    public Medico(String nombre, String apellido, String especialidad) {
+    public Medico(String nombre, String apellido, String especialidad, Hospital hospital, Integer numConsultorio) {
         super(nombre, apellido);
         this.especialidad = especialidad;
+        this.numConsultorio = numConsultorio;
+        this.hospital = hospital;
         pacienteList = new LinkedList<Paciente>();
     }
-
-    public Medico(String nombre, String apellido, String cedula, String especialidad) {
+    
+    public Medico(String nombre, String apellido, String cedula, String especialidad, Hospital hospital, Integer numConsultorio) {
         super(nombre, apellido, cedula);
         this.especialidad = especialidad;
-        pacienteList = new LinkedList<Paciente>();
-    }
-
-    public Medico(String nombre, String apellido, String especialidad, Hospital hospital) {
-        super(nombre, apellido);
-        this.especialidad = especialidad;
+        this.numConsultorio = numConsultorio;
         this.hospital = hospital;
         pacienteList = new LinkedList<Paciente>();
     }
 
+    public Medico(String nombre, String apellido, String cedula, String especialidad,Integer numConsultorio, Float sueldo, Hospital hospital) {
+        super(nombre, apellido, cedula);
+        this.especialidad = especialidad;
+        this.sueldo = sueldo;
+        this.numConsultorio = numConsultorio;
+        this.hospital = hospital;
+        pacienteList = new LinkedList<Paciente>();
+    }
+    
     //Métodos Accesores
     public String getEspecialidad() {
         return especialidad;
@@ -77,11 +80,19 @@ public class Medico extends Persona{
         this.hospital = hospital;
     }
 
-    @Override
-    public String toString() {
-        return "Medico{" + "nombre: " + super.getNombre() + ", apellido: " + 
-                super.getApellido() + ", cedula: " + super.getCedula() + ", especialidad=" + especialidad + ", sueldo: " + this.sueldo +'}';
+    public Integer getNumConsultorio() {
+        return numConsultorio;
     }
+
+    public void setNumConsultorio(Integer numConsultorio) {
+        this.numConsultorio = numConsultorio;
+    }
+    
+//    @Override
+//    public String toString() {
+//        return super.getNombre() + " " + 
+//                super.getApellido() + " - " + super.getCedula() + " - " + especialidad + " - " + sueldo + "\n";
+//    }
     
     
     

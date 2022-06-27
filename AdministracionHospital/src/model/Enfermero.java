@@ -35,7 +35,12 @@ public class Enfermero extends Persona{
         pacienteList = new LinkedList<Paciente>();
     }
 
-    
+    public Enfermero(String nombre, String apellido, String cedula, String tipContrato, Hospital hospital) {
+        super(nombre, apellido, cedula);
+        this.tipContrato = tipContrato;
+        this.hospital = hospital;
+        pacienteList = new LinkedList<Paciente>();
+    }
 
     public Float getSueldo() {
         return sueldo;

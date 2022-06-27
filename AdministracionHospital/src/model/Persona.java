@@ -8,7 +8,7 @@ package model;
  *
  * @author Iván González
  */
-public class Persona {
+public abstract class Persona  {
     
     protected String nombre;
     protected String apellido;

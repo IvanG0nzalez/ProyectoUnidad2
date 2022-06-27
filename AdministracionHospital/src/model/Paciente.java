@@ -24,10 +24,6 @@ public class Paciente extends Persona{
     private Enfermero enfermero;
     private Hospital hospital;
     
-    public Paciente(String nombre, String apellido, String cedula) {
-        super(nombre, apellido, cedula);
-    }
-
     public Paciente(String nombre, String apellido, String cedula, Integer edad, Float peso, Float estatura, String fechaNacimiento, String genero, String motivo) {
         super(nombre, apellido, cedula);
         this.edad = edad;
@@ -36,6 +32,17 @@ public class Paciente extends Persona{
         this.fechaNacimiento = fechaNacimiento;
         this.genero = genero;
         this.motivo = motivo;
+    }
+
+    public Paciente(String nombre, String apellido, String cedula, Integer edad, Float peso, Float estatura, String fechaNacimiento, String genero, String motivo, Hospital hospital) {
+        super(nombre, apellido, cedula);
+        this.edad = edad;
+        this.peso = peso;
+        this.estatura = estatura;
+        this.fechaNacimiento = fechaNacimiento;
+        this.genero = genero;
+        this.motivo = motivo;
+        this.hospital = hospital;
     }
     
     

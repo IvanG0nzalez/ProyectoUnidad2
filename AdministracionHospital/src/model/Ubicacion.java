@@ -24,6 +24,13 @@ public class Ubicacion {
         this.provincia = provincia;
         this.callePrincipal = callePrincipal;
     }
+
+    public Ubicacion(String ciudad, String provincia, String callePrincipal, Hospital hospital) {
+        this(ciudad, provincia, callePrincipal);
+        this.hospital = hospital;
+    }
+    
+    
     
     public String getCiudad() {
         return ciudad;
@@ -59,7 +66,7 @@ public class Ubicacion {
 
     @Override
     public String toString() {
-        return "Ubicacion{" + "ciudad=" + ciudad + ", provincia=" + provincia + ", callePrincipal=" + callePrincipal + '}';
+        return  "Provincia: " + provincia + "\tCiudad: " + ciudad + "\tCalle Principal: " + callePrincipal + "\n";
     }
     
 }
