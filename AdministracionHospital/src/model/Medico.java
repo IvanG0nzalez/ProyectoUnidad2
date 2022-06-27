@@ -20,6 +20,7 @@ public class Medico extends Persona{
     private Hospital hospital;
     private List<Paciente> pacienteList;
 
+    //Constructores
     public Medico() {
         pacienteList = new LinkedList<Paciente>();
     }
@@ -43,6 +44,7 @@ public class Medico extends Persona{
         pacienteList = new LinkedList<Paciente>();
     }
 
+    //Métodos Accesores
     public String getEspecialidad() {
         return especialidad;
     }
@@ -74,12 +76,11 @@ public class Medico extends Persona{
     public void setHospital(Hospital hospital) {
         this.hospital = hospital;
     }
-    
-    
 
     @Override
     public String toString() {
-        return "Medico{" + "nombre: " + super.getNombre() + ", apellido: " + super.getApellido() + ", cedula: " + super.getCedula() + ", especialidad=" + especialidad +'}';
+        return "Medico{" + "nombre: " + super.getNombre() + ", apellido: " + 
+                super.getApellido() + ", cedula: " + super.getCedula() + ", especialidad=" + especialidad + ", sueldo: " + this.sueldo +'}';
     }
     
     

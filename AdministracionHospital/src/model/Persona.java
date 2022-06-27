@@ -39,10 +39,6 @@ public class Persona {
         return cedula;
     }
 
-    @Override
-    public String toString() {
-        return "Persona{" + "nombre=" + nombre + ", apellido=" + apellido + ", cedula=" + cedula + '}';
-    }
 
     
     

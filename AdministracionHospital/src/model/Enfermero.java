@@ -29,12 +29,13 @@ public class Enfermero extends Persona{
         pacienteList = new LinkedList<Paciente>();
     }
 
-    public Enfermero(String nombre, String apellido, String tipContrato, Hospital hospital) {
-        super(nombre, apellido);
+    public Enfermero(String nombre, String apellido, String cedula, String tipContrato) {
+        super(nombre, apellido, cedula);
         this.tipContrato = tipContrato;
-        this.hospital = hospital;
         pacienteList = new LinkedList<Paciente>();
     }
+
+    
 
     public Float getSueldo() {
         return sueldo;
@@ -70,7 +71,7 @@ public class Enfermero extends Persona{
 
     @Override
     public String toString() {
-        return "Enfermero{" + "nombre: " + super.getNombre() + ", apellido: " + super.getApellido() + ", cedula: " + super.getCedula() + ", contrato=" + tipContrato +'}';
+        return "Enfermero{" + "nombre: " + super.getNombre() + ", apellido: " + super.getApellido() + ", cedula: " + super.getCedula() + ", contrato=" + tipContrato + ", sueldo: "+ sueldo + '}';
     }
     
     

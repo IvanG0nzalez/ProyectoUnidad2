@@ -16,49 +16,50 @@ public class Main {
     public static void main(String[] args) {
         // TODO code application logic here
         Hospital hospital = new Hospital("Isidro Ayora");
+        Hospital hospital2 = new Hospital("Abendaño");
         
-        Medico medico = new Medico("Juan", "Lopez", "Neurologo", hospital);
+        Medico medico = new Medico("Juan", "Lopez", "11032532" ,"Neurologo");
         Medico medico2 = new Medico("Pedro", "Escobar", "Internista");
+        Medico medico3 = new Medico("Martina", "Bustos", "Pediatra");
         
-        Enfermero enfermero = new Enfermero("Carlos", "Tene", "Nombramiento");
-        Enfermero enfermero2 = new Enfermero("Felipe", "Caicedo", "Suplente");
+        Enfermero enfermero = new Enfermero("Carlos", "Tene", "11035252","Nombramiento");
+        Enfermero enfermero2 = new Enfermero("Felipe", "Caicedo", "214421412" ,"Suplente");
+        Enfermero enfermero3 = new Enfermero("Josue", "Quesillo", "214124412" ,"Nombramiento");
         
-        Paciente paciente = new Paciente("Eduardo", "Piedra", "110534634", medico, enfermero, hospital);
-        Paciente paciente2 = new Paciente("Maria", "Becerra", "1105342414", medico2);
-        Paciente paciente3 = new Paciente("Niki", "Nicole", "1412412634", medico);
+        Paciente paciente = new Paciente("Eduardo", "Piedra", "110534634");
+        Paciente paciente2 = new Paciente("Maria", "Becerra", "1032532523", 27, 57f, 1.67f, "17-03-2000", "Femenino", "Pierna Rota");
+        Paciente paciente3 = new Paciente("Niki", "Nicole", "1412412634");
         
         Ubicacion ubicacion = new Ubicacion("Loja", "Loja", "Av. 08 de diciembre");
+        Ubicacion ubicacion2 = new Ubicacion("Quito", "Pichincha", "Av. Los Rosales");
         
-        hospital.getUbicacionList().add(ubicacion);
-        hospital.getMedicoList().add(medico);
-        hospital.getMedicoList().add(medico2);
-        hospital.getEnfermeroList().add(enfermero);
-        hospital.getEnfermeroList().add(enfermero2);
-        hospital.getPacienteList().add(paciente);
-        hospital.getPacienteList().add(paciente2);
-        hospital.getPacienteList().add(paciente3);
-//        System.out.println(hospital);
+        hospital.agregarubicacion(ubicacion, hospital);
+        hospital.agregarubicacion(ubicacion2, hospital);
+        
+        hospital.agregarMedico(medico, hospital);
+        hospital.agregarMedico(medico2, hospital);
+        
+        hospital.agregarEnfermero(enfermero, hospital);
+        hospital.agregarEnfermero(enfermero2, hospital);
+        
+        hospital.agregarPaciente(paciente, hospital);
+        hospital.agregarPaciente(paciente2, hospital);
 
-        medico.getPacienteList().add(paciente);
-        medico.getPacienteList().add(paciente2);
-        medico.getPacienteList().add(paciente3);
-//        System.out.println(medico.getHospital().getNombre());
+        hospital.asignarPacienteAMedico(paciente, medico2);
+        hospital.asignarPacienteAMedico(paciente2, medico);
+        hospital.asignarPacienteAMedico(paciente3, medico2);
+        
+        hospital.asignarPacienteAEnfermero(enfermero, paciente);
+        hospital.asignarPacienteAEnfermero(enfermero, paciente2);
+        hospital.asignarPacienteAEnfermero(enfermero2, paciente3);
 
-//        System.out.println(paciente.getMedico());
-//        System.out.println(paciente2.getMedico());
-        paciente.setEnfermero(enfermero);
-        paciente2.setEnfermero(enfermero2);
-        paciente3.setEnfermero(enfermero2);
-//        System.out.println(paciente.getEnfermero());
-
-        paciente2.setHospital(hospital);
-//        System.out.println(paciente2.getHospital());
-
-        enfermero.getPacienteList().add(paciente2);
-//        System.out.println(enfermero.getPacienteList());
-        enfermero.setHospital(hospital);
-//        System.out.println(enfermero.getHospital().getNombre());
-        System.out.println(hospital);
+        hospital.aisgnarSueldoMedico(medico, 5000f);
+        hospital.aisgnarSueldoMedico(medico2, 1000f);
+        hospital.aisgnarSueldoMedico(medico3, 500f);
+        hospital.asignarSueldoEnfermero(enfermero, 1500f);
+        hospital.asignarSueldoEnfermero(enfermero2, 1500f);
+        hospital.asignarSueldoEnfermero(enfermero3, 1500f);
+//        System.out.println(hospital.getTotalSueldo());
     }
     
 }
