@@ -28,23 +28,6 @@ public class Paciente extends Persona{
         super(nombre, apellido, cedula);
     }
 
-//    public Paciente(String nombre, String apellido, String cedula, Hospital hospital) {
-//        super(nombre, apellido, cedula);
-//        this.hospital = hospital;
-//    }
-
-//    public Paciente(String nombre, String apellido, String cedula, Medico medico) {
-//        super(nombre, apellido, cedula);
-//        this.medico = medico;
-//    }
-//
-//    public Paciente(String nombre, String apellido, String cedula, Medico medico, Enfermero enfermero, Hospital hospital) {
-//        super(nombre, apellido, cedula);
-//        this.medico = medico;
-//        this.enfermero = enfermero;
-//        this.hospital = hospital;
-//    }
-
     public Paciente(String nombre, String apellido, String cedula, Integer edad, Float peso, Float estatura, String fechaNacimiento, String genero, String motivo) {
         super(nombre, apellido, cedula);
         this.edad = edad;
